@@ -15,6 +15,7 @@ function Game(){
     const [board, setBoard] = useState(undefined);
     const [turnState, setTurnState] = useState(1)
     const [n, setN] = useState(undefined);
+    const [mode, setMode] = useState(undefined)
     const [gameOverState, setGameOverState] = useState(false);
 
     //for displaying messages
@@ -24,13 +25,22 @@ function Game(){
 
     useEffect(() => {
         const params = new URLSearchParams(window.location.search)
-        const n = Number(params.get('n'));
-        const modeInteger = Number(params.get('mode'));
+        // const n = Number(params.get('n'));
+        // const modeInteger = Number(params.get('mode'));
+
+        const n = Number(sessionStorage.getItem('n'));
+        const modeInteger = Number(sessionStorage.getItem('mode'));
+
+        console.log(n);
+        console.log(modeInteger);
+        console.log(typeof modeInteger);
+        console.log(typeof modeInteger);
 
         let myGameController = new GameController(n, modeInteger)
         console.log(myGameController);
 
         setN(n);
+        setMode(modeInteger)
         let myReversiGame = myGameController.startGame(setGame);
         
         setMyController(myGameController);
@@ -133,7 +143,7 @@ function Game(){
                     </div>
                 </div>
             :<div className='end-game-ui'> 
-                <GameOver score={score}> </GameOver>
+                <GameOver score={score} n={n} mode={mode}> </GameOver>
             </div>
             }
         </main>

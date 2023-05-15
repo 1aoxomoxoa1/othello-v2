@@ -21,8 +21,9 @@ export function squareClicked(event, turnState, setTurnState, setErrMessageClass
 //  * 
 //  * 
 //  */
-export function handlePlayAgain(){
+export function handlePlayAgain(navigate, n, mode){
     window.location.reload();
+
 }
 
 export function handleBackToMenu(navigate){

@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { handlePlayAgain, handleBackToMenu } from '../../api/utilities/utilities';
 
-function GameOver({score}){ 
+function GameOver({score, n, mode}){ 
 
     const navigate = useNavigate(); 
 
@@ -14,7 +14,7 @@ function GameOver({score}){
                 <h1> Score: </h1>
                 <h3> Black : {score['X'] === undefined ? '0' : score['X']} || White : {score['O'] === undefined ? '0' : score['O']}</h3>
                 <div className='btn-ctr'> 
-                    <Button className='over-btn' onClick={handlePlayAgain}> Play Again 
+                    <Button className='over-btn' onClick={() => handlePlayAgain(navigate, n, mode)}> Play Again 
                     </Button> 
                 </div>
                 <div className='btn-ctr two'> 

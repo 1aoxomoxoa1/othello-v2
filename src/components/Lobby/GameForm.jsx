@@ -16,7 +16,11 @@ function GameForm() {
     console.log('Form values:', size, mode);
     // do something with the form values, e.g. make an API request
     
-    navigate(`/game?n=${size}&mode=${modeMap.get(mode)}`)
+    //set these items in local storage for the duration of the page
+    sessionStorage.setItem('n', size);
+    sessionStorage.setItem('mode', modeMap.get(mode));
+
+    navigate(`/game`)
   };
 
   return (
