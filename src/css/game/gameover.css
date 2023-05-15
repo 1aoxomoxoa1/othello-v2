@@ -1,0 +1,20 @@
+.game-over-ctr{
+    font-family: 'ArcadeClassic';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.header-ctr{
+    text-align: center;
+}
+
+.over-btn{
+    display: block;
+    width: 100%;
+}
+
+.two{
+    margin-top: 5px;
+}

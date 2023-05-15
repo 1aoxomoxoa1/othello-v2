@@ -1,0 +1,13 @@
+.my-btsrp-form * {
+    margin: 1vh 0;
+}
+
+.btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.next-btn{
+    width: 30%;
+    margin: 40px auto;
+}
